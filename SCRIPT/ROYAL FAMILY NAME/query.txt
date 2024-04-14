@@ -1,0 +1,60 @@
+1.  ?- husband(X, queenElizabethII) - ( ai là chồng của queenElizabethII)
+	X = princePhillip.
+
+2.  ?- daughter(X, princeAndrew) - (ai là con gái của princeAndrew)
+	X = princessBeatrice ;
+	X = princessEugenie.
+
+3.  ?- mother(X, princessCharlotte) - (ai là mẹ của princessCharlotte)
+	X = kateMiddleton.
+
+4.  ?- grandchild(jamesWindsor, queenElizabethII) - (jamesWindsor là cháu của queenElizabethII ?)
+	true.
+
+5.  ?- aunt(camillaParkerBowles, peterPhillips) - (camillaParkerBowles là dì của peterPhillips ?)
+	true.
+
+6.  ?- grandson(princePhillip, princePhillip) - (princePhillip là cháu trai của princePhillip ?)
+	false.
+
+7.  ?- sister(princessCharlotte, princeLouis) - (princessCharlotte là chị em với princeLouis ?)
+	true.
+
+8.  ?- son(princeGeorge, kateMiddleton) - (princeGeorge là con trai của kateMiddleton ?)
+	true.
+
+9.  ?- grandson(princessEugenie, princeCharles) - (princessEugenie là cháu trai cùa princeCharles ?)
+	false.
+
+10. ?- father(princeWilliam, princessBeatrice) - (princeWilliam là cha của princessBeatrice ?)
+	false.
+
+11. ?- granddaughter(zaraPhillips, princePhillip) - (zaraPhillips là cháu gái của princePhillip ?)
+	true.
+
+12. ?- sibling(princeWilliam, princessEugenie) - (princeWilliam là anh, chị em với princessEugenie ?)
+	false.
+
+13. ?- wife(serahFerguson, princeAndrew) - (serahFerguson là vợ của princeAndrew ?)
+	false.
+
+14. ?- wife(kateMiddleton, princeAndrew) - (kateMiddleton là vợ của princeAndrew ?)
+	false.
+
+15. ?- brother(peterPhillips, zaraPhillips) - (peterPhillips là anh em với zaraPhillips ?)
+	true.
+
+16. ?- nephew(princeLouis, princeHarry) - (princeLouis là cháu trai của princeHarry ?)
+	true.
+
+17. ?- sibling(princessEugenie, princessBeatrice) - (princessEugenie là anh,chị em với princessBeatrice ?)
+	true.
+
+18. ?- child(princeHarry, princeHarry) - (princeHarry là con của princeHarry?)
+	true.
+
+19. ?- grandparent(camillaParkerBowles, princessCharlotte) - (camillaParkerBowles là ông bà của princessCharlotte ?)
+	false
+
+20. ?- grandchild(zaraPhillips, captainMarkPhillips) - (zaraPhillips là cháu của captainMarkPhillips ?)
+	false

@@ -26,4 +26,6 @@ def writeFile(file_path, resolvents, entailment):
                 file.write("\n")  
         if entailment:
             file.write("TRUE\n")
-        else: file.write("FALSE\n")  
+        else: 
+            file.write("0\n")
+            file.write("FALSE\n")  

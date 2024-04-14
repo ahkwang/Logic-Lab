@@ -32,45 +32,46 @@ class KB:
         return clause
     
     def applyResolution(self, clause1, clause2):
-        new_clause = []
+        new_clause = clause1 + clause2
         for literal in clause1:
             if self.negateLiteral(literal) in clause2:
-                # Combine both clauses
-                new_clause = clause1 + clause2
-                # Filter out the literal and its negation from the combined clause
                 new_clause.remove(literal)
                 new_clause.remove(self.negateLiteral(literal))
+                if self.checkComplementaryClause(new_clause):
+                    break
                 if not new_clause: 
+                    #Empty clause
                     new_clause.append('{}')
-                else:
-                    new_clause = self.formatClause(new_clause)  # Format and remove duplicates
-        return new_clause
+                    return new_clause
+                else: 
+                    if not self.checkComplementaryClause(new_clause) and new_clause not in self.kb:
+                        return self.formatClause(new_clause)  
+        #No resolution
+        return [] 
 
     def plResolution(self, alpha):
         resolvents = []
         negatedAlpha = self.negateLiteral(alpha)
-        self.addClause([negatedAlpha])  # Add negated alpha correctly as a list
-        clauses = self.kb.copy()  # Work with a copy of the knowledge base
         print("Knowledge Base:")
-        for clause in clauses:
+        for clause in self.kb:
             print(clause)
-        i = 0
+        print(f"Alpha:\n{negatedAlpha}")
+        self.addClause([negatedAlpha])  # Add negated alpha correctly as a list
+        
         while True:
             new = []
-            pairs = list(combinations(clauses, 2))
-            i+=1            
-            print(f"Loop {i}:")
-            for (ci, cj) in pairs:
+            pairs = list(combinations(self.kb, 2))
+
+            for ci, cj in pairs:
                 resolvent = self.applyResolution(ci, cj)
-                if resolvent and resolvent not in new and resolvent not in clauses:
-                    print(f"{ci} + {cj} = {resolvent}")
+                if resolvent and resolvent not in new and resolvent not in self.kb:
                     new.append(resolvent)
 
             if not new:  # No new clauses
                 return resolvents, False
             else:
                 for new_clause in new:
-                    clauses.append(new_clause)
+                    self.addClause(new_clause)
                 resolvents.append(new)
-                if ['{}'] in clauses:
+                if ['{}'] in self.kb:
                     return resolvents, True 

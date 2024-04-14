@@ -1,0 +1,13 @@
+4
+B
+-A OR C OR D
+-B OR C OR E
+-D
+5
+C OR D
+-A OR C OR E
+-B OR C
+C OR E
+-A OR C
+0
+FALSE

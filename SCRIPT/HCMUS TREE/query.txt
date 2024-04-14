@@ -1,0 +1,40 @@
+1.	Danh sách các khoa thuộc Đại học Khoa Học Tự Nhiên TP.HCM là gì?
+-	?- faculties_of_university(dh_khoa_hoc_tu_nhien, Faculties).
+2.	Danh sách các ngành học thuộc Khoa Công Nghệ Thông Tin có những ngành nào?
+-	?- departments_of_faculty(khoa_cntt, Departments).
+3.	Ai là giảng viên dạy Ngành Công nghệ Phần mềm tại Khoa Công Nghệ Thông Tin?
+-	?- professors_of_department(nganh_cong_nghe_phan_mem, Professors).
+4.	Có bao nhiêu giảng viên đang giảng dạy ở Ngành Vật lý Lý thuyết và Vật lý Toán?
+-	?- professors_of_department(nganh_vat_ly_ly_thuyet_va_vat_ly_toan, Professors), length(Professors, Count).
+5.	Danh sách các ngành học thuộc Khoa Địa Chất có những ngành nào?
+-	?- departments_of_faculty(khoa_dia_chat, Departments).
+6.	‘ThS. Le Giang Thanh’ là giảng viên tại khoa nào tại trường Đại học Khoa Học Tự Nhiên TP.HCM?
+-	?- faculty_of_professor(X, 'ThS. Le Giang Thanh').
+7.	‘PGS TS Tran Van Hieu’ là giảng viên của Khoa Công Nghệ Thông Tin, đúng hay sai?
+-	?- faculty_of_professor(khoa_cntt, ‘PGS TS Tran Van Hieu’).
+8.	Các giảng viên thuộc Khoa Điện tử - Viễn thông dạy ngành nào?
+-	?- professors_of_department(nganh_ky_thuat_dien_tu, Professors).
+9.	Có bao nhiêu giảng viên dạy trong Ngành Công nghệ Sinh học và họ là ai?
+-	?- professors_of_department(nganh_cong_nghe_sinh_hoc, Professors), length(Professors, Count).
+10.	Ai là giảng viên dạy Ngành Toán Giải tích?
+-	?- professors_of_department(nganh_toan_giai_tich, Professors).
+11.	Danh sách các khoa và các ngành thuộc khoa đó tại Đại học Khoa Học Tự Nhiên TP.HCM.
+-	?- faculty(University, Faculty), departments_of_faculty(Faculty, Departments).
+12.	Ngành nào có nhiều giảng viên dạy nhất và số lượng giảng viên đó là bao nhiêu?
+-	?- findall((Department,Count), (professors_of_department(Department, Professors), length(Professors, Count)), List), max_member((MaxDepartment, MaxCount), List).
+13.	Ngành Địa chất học có những giảng viên nào?
+-	?- professors_of_department(nganh_dia_chat_hoc, Professors).
+14.	Khoa Công Nghệ Thông Tin gồm có mấy ngành?
+-	?- findall(Department, department(khoa_cntt, Department), Departments), length(Departments, Count).
+15.	Tìm các giảng viên của Ngành Vi sinh vật học.
+-	?- professors_of_department(nganh_vi_sinh_vat_hoc, Professors).
+16.	Ngành Hóa Lý thuyết và Hóa Lý có bao nhiêu giảng viên và họ là ai?
+-	?- professors_of_department(nganh_hoa_ly_thuyet_va_hoa_ly, Professors), length(Professors, Count).
+17.	Ai là giảng viên của Ngành Quản lý Tài nguyên và Môi trường?
+-	?- professors_of_department(nganh_quan_ly_tai_nguyen_va_moi_truong, Professors).
+18.	Khoa Toán - Tin học có bao nhiêu ngành và mỗi ngành có bao nhiêu giảng viên?
+-	?- departments_of_faculty(khoa_toan_tin_hoc, Departments), findall((Department, Count), (professors_of_department(Department, Professors), length(Professors, Count)), Results).
+19.	Ngành Kỹ thuật Điện tử có những giảng viên nào?
+-	?- professors_of_department(nganh_ky_thuat_dien_tu, Professors).
+20.	Tìm tất cả các giảng viên giảng dạy tại Khoa Môi trường.
+-	?- departments_of_faculty(khoa_moi_truong, Departments), findall(Professor, (member(Department, Departments), professor(Department, Professor)), Professors).
