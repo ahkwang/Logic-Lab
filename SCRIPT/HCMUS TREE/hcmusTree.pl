@@ -203,7 +203,6 @@ professor(nganh_ly_thuyet_xac_suat_va_thong_ke_toan, 'TS. Nguyen Thi Mong Ngoc')
 professor(nganh_ly_thuyet_xac_suat_va_thong_ke_toan, 'TS. Tran Duy Hien').
 % Ngành Cơ sở toán cho Tin học
 professor(nganh_co_so_toan_cho_tin_hoc, 'PGS.TS. Nguyen Thanh Binh').
-professor(nganh_co_so_toan_cho_tin_hoc, 'PGS.TS. Nguyen Thanh Binh').
 % Ngành Toán Ứng dụng
 professor(nganh_toan_ung_dung, 'PGS. TS. Dinh Ngoc Thanh').
 professor(nganh_toan_ung_dung, 'PGS. TS. Nguyen Le Hoang Anh').
@@ -372,7 +371,6 @@ professor(nganh_vi_sinh_vat_hoc, 'TS. Hoang Thi Thanh Minh').
 % Ngành Khoa học môi trường
 professor(nganh_khoa_hoc_moi_truong, 'PGS.TS. To Thi Hien').
 professor(nganh_khoa_hoc_moi_truong, 'PGS.TS. Vu Van Nghi').
-professor(nganh_khoa_hoc_moi_truong, 'PGS.TS. Vu Van Nghi').
 professor(nganh_khoa_hoc_moi_truong, 'TS. Nguyen Bich Ngoc').
 professor(nganh_khoa_hoc_moi_truong, 'TS. Tran Thi Mai Phuong').
 % Ngành Quản lý tài nguyên và môi trường
@@ -413,7 +411,7 @@ professor(nganh_khoa_hoc_vat_lieu, 'TS. Nguyen Thai Ngoc Uyen').
 professor(nganh_khoa_hoc_vat_lieu, 'TS. Tran Cong Khanh').
 
 % Truy vấn giữa giáo viên và khoa
-faculty_of_professor(Faculty, Professor) :-
+faculty_of_professor(Professor, Faculty) :-
     professor(Department, Professor),  % Tìm ngành mà giảng viên này dạy
     department(Faculty, Department),   % Tìm khoa mà ngành đó thuộc về
     !.

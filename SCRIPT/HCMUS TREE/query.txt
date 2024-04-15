@@ -1,40 +1,64 @@
 1.	Danh sách các khoa thuộc Đại học Khoa Học Tự Nhiên TP.HCM là gì?
--	?- faculties_of_university(dh_khoa_hoc_tu_nhien, Faculties).
+-	?- faculties_of_university(dh_khoa_hoc_tu_nhien, Faculties). 
+-> Faculties = [khoa_cntt, khoa_toan_tin_hoc, khoa_vat_ly_vat_ly_ky_thuat, khoa_dien_tu_vien_thong, khoa_hoa, khoa_sinh_hoc_va_cong_nghe_sinh_hoc, khoa_moi_truong, khoa_dia_chat, khoa_khoa_hoc_va_cong_nghe_vat_lieu].
 2.	Danh sách các ngành học thuộc Khoa Công Nghệ Thông Tin có những ngành nào?
--	?- departments_of_faculty(khoa_cntt, Departments).
+-	?- departments_of_faculty(khoa_cntt, Departments). 
+-> Departments = [nganh_cong_nghe_phan_mem, nganh_cong_nghe_tri_thuc, nganh_he_thong_thong_tin, nganh_khoa_hoc_may_tinh, nganh_mang_may_tinh_va_vien_thong, nganh_thi_giac_may_tinh_va_dieu_khien_thong_minh].
 3.	Ai là giảng viên dạy Ngành Công nghệ Phần mềm tại Khoa Công Nghệ Thông Tin?
--	?- professors_of_department(nganh_cong_nghe_phan_mem, Professors).
+-	?- professors_of_department(nganh_cong_nghe_phan_mem, Professors). 
+->Professors = ['PGS. TS. Nguyen Van Vu', 'TS. Nguyen Thi Minh Tuyen', 'ThS. Ho Tuan Thanh', 'TS. Dinh Ba Tien', 'TS. Lam Quang Vu', 'PGS, TS. Tran Minh Triet', 'TS. Ngo Huy Bien', 'TS. Truong Toan Thinh', 'TS. Le Khanh Duy'|...].
 4.	Có bao nhiêu giảng viên đang giảng dạy ở Ngành Vật lý Lý thuyết và Vật lý Toán?
--	?- professors_of_department(nganh_vat_ly_ly_thuyet_va_vat_ly_toan, Professors), length(Professors, Count).
+-	?- professors_of_department(nganh_vat_ly_ly_thuyet_va_vat_ly_toan, Professors), length(Professors, Count). 
+-> Professors = ['GS.TS. Nguyen Quoc Khanh', 'TS. Truong Ba Ha', 'TS. Nguyen Huu Nha', 'TS. Vu Quang Tuyen', 'TS. Vo Quoc Phong', 'TS. Phan Hong Khiem'],
+Count = 6.
 5.	Danh sách các ngành học thuộc Khoa Địa Chất có những ngành nào?
 -	?- departments_of_faculty(khoa_dia_chat, Departments).
+-> Departments = [nganh_dia_chat_hoc, nganh_ky_thuat_dia_chat].
 6.	‘ThS. Le Giang Thanh’ là giảng viên tại khoa nào tại trường Đại học Khoa Học Tự Nhiên TP.HCM?
--	?- faculty_of_professor(X, 'ThS. Le Giang Thanh').
+-	?- faculty_of_professor('ThS. Le Giang Thanh', X).
+-> X = khoa_cntt.
 7.	‘PGS TS Tran Van Hieu’ là giảng viên của Khoa Công Nghệ Thông Tin, đúng hay sai?
--	?- faculty_of_professor(khoa_cntt, ‘PGS TS Tran Van Hieu’).
+-	?- faculty_of_professor('PGS.TS Tran Van Hieu', khoa_cntt).
+-> false 
 8.	Các giảng viên thuộc Khoa Điện tử - Viễn thông dạy ngành nào?
 -	?- professors_of_department(nganh_ky_thuat_dien_tu, Professors).
+-> Professors = ['GS.TS. Dinh Sy Hien', 'TS. Le Duc Hung', 'TS. Huynh Huu Thuan', 'TS. Bui Trong Tu', 'TS. Nguyen Viet Ha', 'TS. Dang Le Khoa', 'TS. Nguyen Xuan Vinh'].
 9.	Có bao nhiêu giảng viên dạy trong Ngành Công nghệ Sinh học và họ là ai?
 -	?- professors_of_department(nganh_cong_nghe_sinh_hoc, Professors), length(Professors, Count).
+-> Professors = ['PGS.TS. Tran Van Hieu', 'PGS.TS. Dang Thi Phuong Thao', 'PGS.TS. Quach Ngoc Diem Phuong', 'PGS.TS Vu Bich Ngoc', 'TS. Nguyen Tri Nhan', 'TS. Tran Trung Hieu', 'TS. Nguyen Thi My Lan', 'TS. Luong Thi My Ngan', 'TS. Tran Nguyen Vu'|...],
+Count = 12.
 10.	Ai là giảng viên dạy Ngành Toán Giải tích?
 -	?- professors_of_department(nganh_toan_giai_tich, Professors).
-11.	Danh sách các khoa và các ngành thuộc khoa đó tại Đại học Khoa Học Tự Nhiên TP.HCM.
--	?- faculty(University, Faculty), departments_of_faculty(Faculty, Departments).
-12.	Ngành nào có nhiều giảng viên dạy nhất và số lượng giảng viên đó là bao nhiêu?
--	?- findall((Department,Count), (professors_of_department(Department, Professors), length(Professors, Count)), List), max_member((MaxDepartment, MaxCount), List).
+-> Professors = ['GS.TS. Duong Minh Duc', 'PGS.TS. Nguyen Dinh Phu', 'PGS.TS. Nguyen Huy Tuan', 'PGS. TS. Ly Kim Ha', 'PGS. TS. Bui Le Trong Thanh', 'TS. Nguyen Thanh Long', 'TS. Ta Thi Nguyet Nga', 'TS. Ong Thanh Hai', 'TS. Le Ba Khanh Trinh'|...].
+11.	"ThS. Thai Hung Van" dạy Ngành nào?
+-   ?- professor(X, 'ThS. Thai Hung Van').
+-> X = nganh_cong_nghe_tri_thuc.
+12.	'TS. Nguyen Van Thin' có phải là giảng viên của khoa toán tin học không?
+-	?- faculty_of_professor('TS. Nguyen Van Thin', khoa_toan_tin_hoc).
+-> true
 13.	Ngành Địa chất học có những giảng viên nào?
 -	?- professors_of_department(nganh_dia_chat_hoc, Professors).
+-> Professors = ['PGS.TS. Pham Trung Hieu', 'TS. Le Duc Phuc', 'TS. Bui Thi Luan', 'TS. Nguyen Kim Hoang'].
 14.	Khoa Công Nghệ Thông Tin gồm có mấy ngành?
 -	?- findall(Department, department(khoa_cntt, Department), Departments), length(Departments, Count).
+-> Departments = [nganh_cong_nghe_phan_mem, nganh_cong_nghe_tri_thuc, nganh_he_thong_thong_tin, nganh_khoa_hoc_may_tinh, nganh_mang_may_tinh_va_vien_thong, nganh_thi_giac_may_tinh_va_dieu_khien_thong_minh],
+Count = 6.
 15.	Tìm các giảng viên của Ngành Vi sinh vật học.
 -	?- professors_of_department(nganh_vi_sinh_vat_hoc, Professors).
+-> Professors = ['GS.TS. Tran Linh Thuoc', 'PGS.TS. Nguyen Duc Hoang', 'PGS.TS. Phan Thi Phuong Trang', 'TS. Tran Bich Thu', 'TS. Hoang Thi Thanh Minh'].
 16.	Ngành Hóa Lý thuyết và Hóa Lý có bao nhiêu giảng viên và họ là ai?
 -	?- professors_of_department(nganh_hoa_ly_thuyet_va_hoa_ly, Professors), length(Professors, Count).
+-> Professors = ['PGS.TS. Nguyen Thai Hoang', 'PGS.TS. Le My Loan Phung', 'PGS.TS. Tran Van Man', 'PGS.TS. Pham Tran Nguyen Nguyen', 'PGS.TS. Hoang Ngoc Cuong', 'PGS. TS. Co Thanh Thien', 'PGS.TS. Nguyen Cong Tranh', 'TS. Nguyen Ngoc An', 'TS. Ho Thi Cam Hoai'|...],
+Count = 10.
 17.	Ai là giảng viên của Ngành Quản lý Tài nguyên và Môi trường?
 -	?- professors_of_department(nganh_quan_ly_tai_nguyen_va_moi_truong, Professors).
-18.	Khoa Toán - Tin học có bao nhiêu ngành và mỗi ngành có bao nhiêu giảng viên?
--	?- departments_of_faculty(khoa_toan_tin_hoc, Departments), findall((Department, Count), (professors_of_department(Department, Professors), length(Professors, Count)), Results).
+-> Professors = ['PGS.TS. Ha Quang Hai', 'PGS.TS. Dao Nguyen Khoi', 'PGS.TS. Bui Viet Hung', 'PGS. TS. Le Ngoc Tuan', 'TS. Duong Thi Thuy Nga', 'TS. Nguyen Ai Le', 'TS. Ngo Thi Thuan', 'TS. Duong Huu Huy', 'TS. Tran Bich Chau'|...].
+18.	'ThS. Nguyen Minh Huy' là giảng viên của khoa hoá có đúng hay không?
+-	?- faculty_of_professor('ThS. Nguyen Minh Huy', khoa_hoa).
+-> false.
 19.	Ngành Kỹ thuật Điện tử có những giảng viên nào?
 -	?- professors_of_department(nganh_ky_thuat_dien_tu, Professors).
-20.	Tìm tất cả các giảng viên giảng dạy tại Khoa Môi trường.
--	?- departments_of_faculty(khoa_moi_truong, Departments), findall(Professor, (member(Department, Departments), professor(Department, Professor)), Professors).
+-> Professors = ['GS.TS. Dinh Sy Hien', 'TS. Le Duc Hung', 'TS. Huynh Huu Thuan', 'TS. Bui Trong Tu', 'TS. Nguyen Viet Ha', 'TS. Dang Le Khoa', 'TS. Nguyen Xuan Vinh'].
+20.	Đại học Khoa Học Tự Nhiên có khoa Công nghệ Thông tin không?
+-	?- faculty(dh_khoa_hoc_tu_nhien, khoa_cntt).
+-> true.
