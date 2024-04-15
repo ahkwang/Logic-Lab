@@ -66,7 +66,7 @@ department(khoa_moi_truong, nganh_quan_ly_tai_nguyen_va_moi_truong).
 % Khoa Địa Chất
 department(khoa_dia_chat, nganh_dia_chat_hoc).
 department(khoa_dia_chat, nganh_ky_thuat_dia_chat).
-
+    
 % Khoa Khoa học và Công nghệ Vật liệu
 department(khoa_khoa_hoc_va_cong_nghe_vat_lieu, nganh_khoa_hoc_vat_lieu).
 
