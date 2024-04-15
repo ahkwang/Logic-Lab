@@ -4,7 +4,7 @@ import os
 
 INPUT = ".\\INPUT"
 OUTPUT = ".\\OUTPUT"
-INPUT_LIST = ["test1.txt", "test2.txt", "test3.txt", "test4.txt",  "test5.txt", "test6.txt"]
+INPUT_LIST = ["test1.txt", "test2.txt", "test3.txt", "test4.txt",  "test5.txt"]
 
 def main():
     inputPaths = [os.path.join(INPUT, fileName) for fileName in INPUT_LIST]
