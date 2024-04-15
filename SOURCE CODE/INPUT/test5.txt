@@ -2,7 +2,7 @@ A
 6
 A
 B OR D
-B OR -C OR A
--D OR -B OR A
--C OR -A
+A OR B OR -C
+A OR -B OR -D
+-A OR -C
 -B
