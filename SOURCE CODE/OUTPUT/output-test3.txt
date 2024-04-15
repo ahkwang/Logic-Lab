@@ -1,23 +1,23 @@
 5
-B
--A OR C OR D
--B OR C OR E
--B OR D
--D
-9
-C OR D
--A OR C OR E
--A OR D
+B OR C
+A OR B OR D
+B OR -C
 -B OR C
--B OR E
-C OR E
-D
--A OR C
--B
-5
 C
--A OR E
--A
-E
-{}
-TRUE
+6
+B OR D
+-A OR C
+A OR C
+A OR C OR D
+A OR B
+B
+3
+B OR C OR D
+-A OR B OR D
+C OR D
+1
+-A OR C OR D
+1
+-B OR C OR D
+0
+FALSE

@@ -1,20 +1,23 @@
+5
+B
+-A OR C OR D
+-B OR C OR E
+-B OR D
+-D
 9
--Q OR R OR S
-P
--Q OR -R
-P OR R
--P OR S
-Q OR R OR S
-S
--P
-P OR R OR S
-8
--Q
-R OR S
--P OR -Q OR S
--R
--P OR Q OR S
-Q OR R
+C OR D
+-A OR C OR E
+-A OR D
+-B OR C
+-B OR E
+C OR E
+D
+-A OR C
+-B
+5
+C
+-A OR E
+-A
+E
 {}
-P OR -Q OR S
 TRUE
