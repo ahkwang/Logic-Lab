@@ -20,4 +20,4 @@ C
 -A
 E
 {}
-TRUE
+YES

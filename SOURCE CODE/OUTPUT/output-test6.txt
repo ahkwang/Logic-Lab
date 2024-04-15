@@ -1,20 +1,13 @@
-9
--Q OR R OR S
-P
--Q OR -R
-P OR R
--P OR S
-Q OR R OR S
-S
--P
-P OR R OR S
-8
--Q
-R OR S
--P OR -Q OR S
--R
--P OR Q OR S
-Q OR R
-{}
-P OR -Q OR S
-TRUE
+5
+B OR C
+A OR C OR D
+A
+C OR -D
+A OR -B
+4
+A OR C
+C
+C OR D
+-B OR C
+0
+NO

@@ -10,6 +10,7 @@ def main():
     inputPaths = [os.path.join(INPUT, fileName) for fileName in INPUT_LIST]
     outputPaths = [os.path.join(OUTPUT, "output-" + fileName) for fileName in INPUT_LIST]
     for i in range(len(inputPaths)):
+        print(f"\n{inputPaths[i]}")
         kb, alpha = parseInput(inputPaths[i]) 
         resolvents, entailment = kb.plResolution(alpha)
         writeFile(outputPaths[i], resolvents, entailment)

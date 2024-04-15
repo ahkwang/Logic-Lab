@@ -51,7 +51,7 @@
 	true.
 
 18. ?- child(princeHarry, princeHarry) - (princeHarry là con của princeHarry?)
-	true.
+	false.
 
 19. ?- grandparent(camillaParkerBowles, princessCharlotte) - (camillaParkerBowles là ông bà của princessCharlotte ?)
 	false

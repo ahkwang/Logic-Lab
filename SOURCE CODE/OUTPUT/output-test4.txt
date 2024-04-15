@@ -10,4 +10,4 @@ C OR D
 C OR E
 -A OR C
 0
-FALSE
+NO

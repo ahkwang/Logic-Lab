@@ -52,19 +52,23 @@ class KB:
     def plResolution(self, alpha):
         resolvents = []
         negatedAlpha = self.negateLiteral(alpha)
+        print(f"Alpha:\n{alpha}")
         print("Knowledge Base:")
         for clause in self.kb:
             print(clause)
-        print(f"Alpha:\n{negatedAlpha}")
         self.addClause([negatedAlpha])  # Add negated alpha correctly as a list
+        
+        i = 1
         
         while True:
             new = []
             pairs = list(combinations(self.kb, 2))
-
+            print(f"Loop {i}")
+            i+=1
             for ci, cj in pairs:
                 resolvent = self.applyResolution(ci, cj)
                 if resolvent and resolvent not in new and resolvent not in self.kb:
+                    print(f"{ci} + {cj} = {resolvent}")
                     new.append(resolvent)
 
             if not new:  # No new clauses
